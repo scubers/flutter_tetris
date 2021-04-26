@@ -2,7 +2,7 @@ name: flutter_tetris
 description: A new Flutter package.
 version: 0.0.1
 author:
-homepage:
+homepage: https://github.com/scubers/flutter_tetris
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
