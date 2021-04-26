@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_tetris/interceptor.dart';
-import 'package:flutter_tetris/tree.dart';
+import 'interceptor.dart';
+import 'tree.dart';
 
 ///
 /// Created by wangjunren on 2020/10/28
