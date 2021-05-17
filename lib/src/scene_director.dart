@@ -49,7 +49,7 @@ class SceneDirectorState extends State<SceneDirector> {
     Map<String, Object> params = const {},
     InterceptorManager? interceptorManager,
   }) async {
-    return _manager.start(context, url, params: params);
+    return _manager.start(context, url, params: params, interceptorManager: interceptorManager);
   }
 
   Future<void> push(
