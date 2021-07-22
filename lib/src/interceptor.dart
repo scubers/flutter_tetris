@@ -28,7 +28,7 @@ class InterceptorResult {
   final RouterWidgetBuilder? builder;
   final String? url;
   final Error? error;
-  final Map<String, Object> params;
+  final Map<String, dynamic> params;
 
   InterceptorResult(
       {required this.status, this.builder, this.url, this.error, this.params = const {}});
@@ -40,7 +40,7 @@ class InterceptorResult {
       InterceptorResult(status: RouterRunInterceptorResultStatus.rejected, error: error);
 
   static InterceptorResult switched(
-      {String? url, RouterWidgetBuilder? builder, Map<String, Object> params = const {}}) {
+      {String? url, RouterWidgetBuilder? builder, Map<String, dynamic> params = const {}}) {
     assert(url != null || builder != null);
     return InterceptorResult(
       status: RouterRunInterceptorResultStatus.switched,

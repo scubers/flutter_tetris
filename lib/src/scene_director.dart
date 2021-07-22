@@ -46,7 +46,7 @@ class SceneDirectorState extends State<SceneDirector> {
   Future<RouterDest> start(
     BuildContext context, {
     required String url,
-    Map<String, Object> params = const {},
+    Map<String, dynamic> params = const {},
     List<Interceptor> interceptors = const [],
   }) async {
     return _manager.start(
@@ -60,7 +60,7 @@ class SceneDirectorState extends State<SceneDirector> {
   Future<void> push(
     BuildContext context, {
     required String url,
-    Map<String, Object> params = const {},
+    Map<String, dynamic> params = const {},
     Route Function(Widget child)? routeBuilder,
     List<Interceptor> interceptors = const [],
   }) async {
