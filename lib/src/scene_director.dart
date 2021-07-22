@@ -47,9 +47,14 @@ class SceneDirectorState extends State<SceneDirector> {
     BuildContext context, {
     required String url,
     Map<String, Object> params = const {},
-    InterceptorManager? interceptorManager,
+    List<Interceptor> interceptors = const [],
   }) async {
-    return _manager.start(context, url, params: params, interceptorManager: interceptorManager);
+    return _manager.start(
+      context,
+      url,
+      params: params,
+      interceptorManager: InterceptorManager()..add(interceptors)..add(widget.interceptors),
+    );
   }
 
   Future<void> push(
@@ -63,7 +68,7 @@ class SceneDirectorState extends State<SceneDirector> {
       context,
       url: url,
       params: params,
-      interceptorManager: InterceptorManager()..add(interceptors)..add(widget.interceptors),
+      interceptors: interceptors,
     );
     var route = routeBuilder?.call(result.build(context)) ??
         MaterialPageRoute(builder: (context) => result.build(context));

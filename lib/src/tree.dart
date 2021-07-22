@@ -172,7 +172,7 @@ class TreeResult {
 class UrlComponent {
   final Uri _uri;
   dynamic value;
-  var _map = <String, Object>{};
+  var _map = <String, dynamic>{};
 
   Uri get uri => _uri;
 
@@ -186,7 +186,7 @@ class UrlComponent {
 
   String get queryString => _uri.query;
 
-  Map<String, Object> get parameters => _map;
+  Map<String, dynamic> get parameters => _map;
 
   int get port => _uri.port;
 
@@ -194,7 +194,7 @@ class UrlComponent {
       : this._uri = uri,
         this._map = Map.of(uri.queryParameters);
 
-  addExtra(Map<String, Object> parameters) => _map.addAll(parameters);
+  addExtra(Map<String, dynamic> parameters) => _map.addAll(parameters);
 
   String? getString(String key) {
     var target = _map[key];

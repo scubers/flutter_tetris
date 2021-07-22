@@ -22,7 +22,7 @@ class RouterManager {
   }
 
   Future<RouterDest> start(BuildContext context, String url,
-      {Map<String, Object> params = const {}, InterceptorManager? interceptorManager}) async {
+      {Map<String, dynamic> params = const {}, InterceptorManager? interceptorManager}) async {
     try {
       var uri = Uri.parse(url);
       var component = _tree.findByUri(uri);
